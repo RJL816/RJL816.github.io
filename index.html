@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jialun Ren - Personal Academic Homepage. Computer Vision, Continual Learning, YOLO.">
+    <title>任佳伦 | 个人主页</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Long+Cang&family=Caveat:wght@500;600&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!--
+    ============================================================
+    任佳伦 Jialun Ren · 个人学术主页
+    设计概念 "学习痕迹 · TRACES & ANCHORS"：
+    以工程图纸(蓝图)美学为骨架，以红色铅笔批注为手迹，
+    呼应本人研究方向 —— 学习痕迹汇聚为锚点 (TAPC)。
+    支持中英文切换 · 纯 HTML/CSS/JS · GitHub Pages 部署
+    请搜索 "TODO" 找到需要替换的个人信息
+    ============================================================
+    -->
+</head>
+<body>
+
+    <!-- Scroll progress trace -->
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ==================== Navigation ==================== -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">任佳伦<span class="logo-sep">/</span><span class="logo-mono">JL·2026</span></a>
+            <div class="nav-right">
+                <ul id="nav-links" class="nav-links">
+                    <li><a href="#about" data-i18n="nav-about">关于我</a></li>
+                    <li><a href="#research-work" data-i18n="nav-research">科研工作</a></li>
+                    <li><a href="#project" data-i18n="nav-project">项目经历</a></li>
+                    <li><a href="#publications" data-i18n="nav-publications">论文成果</a></li>
+                    <li><a href="#awards" data-i18n="nav-awards">获奖荣誉</a></li>
+                    <li><a href="#skills" data-i18n="nav-skills">专业技能</a></li>
+                    <li><a href="#contact" data-i18n="nav-contact">联系方式</a></li>
+                </ul>
+                <button id="lang-toggle" class="lang-toggle" aria-label="切换语言 / Switch language" title="中 / EN">
+                    <span class="lang-zh">中</span>
+                    <span class="lang-en">EN</span>
+                </button>
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Anchor rail (traces of the page) -->
+    <nav class="rail" id="rail" aria-label="Section anchors"></nav>
+
+    <!-- ==================== Hero ==================== -->
+    <header id="hero">
+        <!-- drafting grid -->
+        <div class="hero-grid" aria-hidden="true"></div>
+        <!-- registration crosses -->
+        <span class="hero-cross c1" aria-hidden="true">+</span>
+        <span class="hero-cross c2" aria-hidden="true">+</span>
+        <span class="hero-cross c3" aria-hidden="true">+</span>
+        <span class="hero-cross c4" aria-hidden="true">+</span>
+        <!-- converging traces -->
+        <svg class="hero-trace" viewBox="0 0 900 300" fill="none" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+            <path d="M-20 210 C 140 150 300 250 470 190 C 610 140 700 168 756 152"/>
+            <path d="M-20 90 C 160 150 320 60 480 110 C 610 150 700 132 754 150"/>
+            <path d="M-20 150 C 130 180 300 80 460 150 C 590 200 690 158 752 150"/>
+            <text x="26" y="252" class="t-text">学习痕迹 TRACES</text>
+        </svg>
+        <!-- compass rings behind the avatar -->
+        <div class="hero-rings" aria-hidden="true">
+            <i class="ring-a"></i>
+            <i class="ring-b"></i>
+            <i class="ring-c">+</i>
+        </div>
+
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <p class="hero-kicker" data-i18n="hero-affiliation">华北电力大学 · 计算机学院</p>
+                    <h1 class="hero-name" data-echo="任佳伦">任佳<span class="circle">伦</span></h1>
+                    <p class="hero-name-en">Jialun Ren <span class="hero-code">JL·2026</span></p>
+                    <p class="hero-identity" data-i18n="hero-identity">计算机科学与技术 · 本科生</p>
+                    <div class="hero-tags">
+                        <span class="tag tag-primary">Computer Vision</span>
+                        <span class="tag tag-primary">Continual Learning</span>
+                        <span class="tag tag-primary">Object Detection</span>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="assets/cv.pdf?v=20260820" class="btn-primary" target="_blank">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <span data-i18n="btn-cv">查看简历</span>
+                        </a>
+                        <a href="https://github.com/RJL816" class="btn-ghost" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="mailto:renjl323@163.com" class="btn-ghost">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span data-i18n="btn-email">联系我</span>
+                        </a>
+                    </div>
+                    <p class="hand-note hero-note" data-i18n="hero-note">保研准备中 · 期待与导师联系 ↝</p>
+                </div>
+                <div class="hero-aside">
+                    <div class="avatar-wrap">
+                        <span class="avatar-ring" aria-hidden="true"></span>
+                        <img class="avatar-img" src="assets/avatar.jpg" alt="任佳伦 · Jialun Ren">
+                        <span class="dim dim-r" aria-hidden="true">R 120</span>
+                        <span class="dim dim-phi" aria-hidden="true">φ 250</span>
+                        <span class="avatar-seal" aria-hidden="true">任</span>
+                    </div>
+                    <p class="avatar-caption" aria-hidden="true">FIG. A — PORTRAIT · 头像</p>
+                    <div class="nameplate tick">
+                        <p class="np-title">铭牌 · NAMEPLATE</p>
+                        <div class="np-row"><span class="np-k">MODEL</span><span class="np-v">RJL-2026</span></div>
+                        <div class="np-row"><span class="np-k">SPEC</span><span class="np-v">CS · UG</span></div>
+                        <div class="np-row"><span class="np-k">ORIGIN</span><span class="np-v" data-i18n="plate-origin">华北电力大学</span></div>
+                        <div class="np-row"><span class="np-k">STATUS</span><span class="np-v np-v-red" data-i18n="plate-status">保研准备中</span></div>
+                        <div class="np-tags" role="list">
+                            <span role="listitem" data-i18n="sidecard-hobby1">喜欢画画</span>
+                            <span role="listitem" data-i18n="sidecard-hobby2">热爱运动</span>
+                            <span role="listitem" data-i18n="sidecard-hobby3">动手能力强</span>
+                            <span role="listitem" data-i18n="sidecard-hobby4">爱钻研</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll" aria-hidden="true">SCROLL<span></span></div>
+    </header>
+
+    <!-- ==================== Marquee tape ==================== -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="m-group">
+                <span class="m-item"><b>持续学习</b> CONTINUAL LEARNING</span><i class="m-sep">+</i>
+                <span class="m-item"><b>灾难性遗忘</b> CATASTROPHIC FORGETTING</span><i class="m-sep">+</i>
+                <span class="m-item"><b>目标检测</b> OBJECT DETECTION</span><i class="m-sep">+</i>
+                <span class="m-item"><b>YOLO 改进</b> YOLO IMPROVEMENT</span><i class="m-sep">+</i>
+                <span class="m-item"><b>类增量学习</b> CLASS-INCREMENTAL LEARNING</span><i class="m-sep">+</i>
+                <span class="m-item"><b>多传感器融合</b> MULTI-SENSOR FUSION</span><i class="m-sep">+</i>
+                <span class="m-item"><b>全栈开发</b> FULL-STACK DEVELOPMENT</span><i class="m-sep">+</i>
+                <span class="m-item"><b>保研进行中</b> SEEKING ADVISOR</span><i class="m-sep">+</i>
+            </div>
+            <div class="m-group">
+                <span class="m-item"><b>持续学习</b> CONTINUAL LEARNING</span><i class="m-sep">+</i>
+                <span class="m-item"><b>灾难性遗忘</b> CATASTROPHIC FORGETTING</span><i class="m-sep">+</i>
+                <span class="m-item"><b>目标检测</b> OBJECT DETECTION</span><i class="m-sep">+</i>
+                <span class="m-item"><b>YOLO 改进</b> YOLO IMPROVEMENT</span><i class="m-sep">+</i>
+                <span class="m-item"><b>类增量学习</b> CLASS-INCREMENTAL LEARNING</span><i class="m-sep">+</i>
+                <span class="m-item"><b>多传感器融合</b> MULTI-SENSOR FUSION</span><i class="m-sep">+</i>
+                <span class="m-item"><b>全栈开发</b> FULL-STACK DEVELOPMENT</span><i class="m-sep">+</i>
+                <span class="m-item"><b>保研进行中</b> SEEKING ADVISOR</span><i class="m-sep">+</i>
+            </div>
+        </div>
+    </div>
+
+    <main>
+
+    <!-- ==================== About ==================== -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-index">01</span>
+                <div class="section-titles">
+                    <h2 class="section-title" data-i18n="about-heading">关于我</h2>
+                    <span class="section-overline" data-i18n="overline-about">About</span>
+                </div>
+                <span class="section-rule" aria-hidden="true"></span>
+            </div>
+            <div class="about-body reveal">
+                <p data-i18n="about-p1">我是<strong>华北电力大学</strong><strong>计算机科学与技术</strong>专业的本科生（GPA 90.70/100，专业排名 5/100），现正积极准备<strong>保研/夏令营</strong>申请，期待与有意向的导师建立联系，在计算机领域继续深造。</p>
+                <p data-i18n="about-p2">我本科期间的研究方向聚焦<strong>图像领域的持续学习</strong>——在科研期间阅读了许多经典文献，在老师的指导下受人类记忆机制启发，探索轻量级的抗灾难性遗忘方法，相关论文正在撰写中。</p>
+                <p data-i18n="about-p3">在工程实践方面，我具备扎实的编程基础（Python / C++ / JavaScript）和深度学习框架（PyTorch）使用经验，能够独立完成从数据处理、模型训练到系统部署的全流程开发。主导开发的"云视智盔"系统，通过引入动态形变感知重采样模块与改进损失函数，显著提升了复杂场景下的检测精度。</p>
+                <div class="about-spec">
+                    <div class="spec-row">
+                        <span class="spec-k" data-i18n="stat1-label">GPA</span>
+                        <span class="spec-v">90.70<sup>/100</sup></span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-k" data-i18n="stat2-label">专业排名</span>
+                        <span class="spec-v">5<sup>/100</sup></span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-k" data-i18n="stat3-label">荣誉奖项</span>
+                        <span class="spec-v">10<sup>+</sup></span>
+                    </div>
+                </div>
+                <p class="hand-note about-note" data-i18n="about-note">✎ 数据截至 2026.08 · 持续更新中</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Research Interests ==================== -->
+    <section id="research" class="section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-index">02</span>
+                <div class="section-titles">
+                    <h2 class="section-title" data-i18n="research-heading">研究方向</h2>
+                    <span class="section-overline" data-i18n="overline-research">Research</span>
+                </div>
+                <span class="section-rule" aria-hidden="true"></span>
+            </div>
+            <div class="research-grid">
+                <article class="research-item tick reveal">
+                    <div class="ri-top">
+                        <span class="ri-index">R-01</span>
+                        <span class="ri-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17 C 7 7 10 21 15 11 C 17 7 19 9 20 8"/><rect x="18.5" y="5.5" width="4.5" height="4.5"/><path d="M18.5 5.5 L23 10"/></svg>
+                        </span>
+                    </div>
+                    <h3 data-i18n="research-cl-title">持续学习</h3>
+                    <p data-i18n="research-cl-desc">研究视觉模型在连续任务流中的灾难性遗忘问题，主要聚焦 Class-IL 类增量学习设置，缓解稳定性-可塑性矛盾及灾难性遗忘问题。</p>
+                </article>
+                <article class="research-item tick reveal">
+                    <div class="ri-top">
+                        <span class="ri-index">R-02</span>
+                        <span class="ri-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14"/><path d="M3 9v-4h4M15 5h4v4M21 15v4h-4M9 19h-4v-4"/></svg>
+                        </span>
+                    </div>
+                    <h3 data-i18n="research-od-title">目标检测与 YOLO 改进</h3>
+                    <p data-i18n="research-od-desc">聚焦小目标、遮挡、运动模糊等复杂场景，改进 YOLO 系列检测器。主导开发的"云视智盔"系统引入动态形变感知上采样与 WIoU 损失，面向智慧交通实现高精度头盔检测。</p>
+                </article>
+                <article class="research-item tick reveal">
+                    <div class="ri-top">
+                        <span class="ri-index">R-03</span>
+                        <span class="ri-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="1.8"/><circle cx="4" cy="14" r="1.8"/><circle cx="20" cy="14" r="1.8"/><circle cx="12" cy="20" r="1.8"/><path d="M12 5.8 L5 12.5 M12 5.8 L19 12.5 M12 18.2 L5 15.5 M12 18.2 L19 15.5"/></svg>
+                        </span>
+                    </div>
+                    <h3 data-i18n="research-dl-title">深度学习与模型优化</h3>
+                    <p data-i18n="research-dl-desc">深入掌握卷积神经网络、Transformer 架构及 PyTorch 框架。研究方向涵盖模型轻量化设计、训练策略优化、损失函数重构，以及在噪声标注环境下的鲁棒性训练。</p>
+                </article>
+                <article class="research-item tick reveal">
+                    <div class="ri-top">
+                        <span class="ri-index">R-04</span>
+                        <span class="ri-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.4"/><path d="M12 4.5v-2M12 21.5v-2M4.5 12h-2M21.5 12h-2M6.7 6.7l-1.4-1.4M18.7 18.7l-1.4-1.4M17.3 6.7l1.4-1.4M5.3 18.7l1.4-1.4"/></svg>
+                        </span>
+                    </div>
+                    <h3 data-i18n="research-eng-title">工程实践</h3>
+                    <p data-i18n="research-eng-desc">具备 Python / C++ / JavaScript 编程能力，能够独立完成从数据处理、模型训练到系统部署的全流程。课余自主开发待办事项 APP、论文阅读工具等，持续精进工程能力。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Research Work (TAPC) ==================== -->
+    <section id="research-work" class="section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-index">03</span>
+                <div class="section-titles">
+                    <h2 class="section-title" data-i18n="rw-heading">当前科研工作</h2>
+                    <span class="section-overline" data-i18n="overline-rw">Research Work</span>
+                </div>
+                <span class="section-rule" aria-hidden="true"></span>
+            </div>
+
+            <p class="rw-intro reveal" data-i18n="rw-intro">本项目针对类增量学习（Class-IL）设置下的灾难性遗忘问题，提出 <strong>Trace-Anchored Projector Consolidation (TAPC)</strong>——一种受人类记忆机制启发的轻量化抗遗忘方法。以预训练 ResNet-18 / ViT 为骨干获取稳定视觉特征，将每次梯度更新后的投影头参数状态视为一条"学习痕迹"，通过 EMA 周期性聚合近期痕迹形成 Anchor Projector，约束后续投影头更新，在保持新任务学习能力的同时显著减少旧知识遗忘。</p>
+
+            <!-- the method, drawn as a diagram -->
+            <div class="trace-demo reveal" id="trace-demo">
+                <span class="td-label td-left">学习痕迹<br>TRACES</span>
+                <svg class="td-svg" viewBox="0 0 560 96" fill="none" aria-hidden="true">
+                    <path class="td-path" pathLength="1" d="M6 70 C 60 46 110 82 165 60 C 220 38 270 52 330 52 C 400 52 450 40 494 46"/>
+                    <path class="td-path td-path-red" pathLength="1" d="M6 26 C 70 44 120 18 175 36 C 230 54 275 58 330 46 C 400 40 450 50 493 47"/>
+                    <path class="td-path" pathLength="1" d="M6 48 C 65 30 125 60 180 48 C 235 36 280 30 335 44 C 410 56 455 44 495 46"/>
+                    <path class="td-halo" pathLength="1" d="M 470 46 A 28 28 0 1 0 526 46 A 28 28 0 1 0 470 46"/>
+                    <rect class="td-anchor" x="488" y="36" width="20" height="20"/>
+                </svg>
+                <span class="td-label td-right">锚点<br>ANCHOR</span>
+            </div>
+
+            <div class="plate tick reveal">
+                <div class="plate-head">
+                    <span class="plate-no">PLATE 01</span>
+                    <h3 class="plate-title" data-i18n="rw-method-title">方法框架</h3>
+                    <span class="plate-tags">TAPC · RESNET-18 / VIT</span>
+                </div>
+                <figure class="plate-media">
+                    <img src="assets/project-tapc-method.png?v=2026" alt="TAPC Method Framework">
+                    <figcaption data-i18n="rw-method-caption">TAPC：基于学习痕迹的投影头巩固机制</figcaption>
+                </figure>
+                <div class="plate-foot">
+                    <span>DWG NO. JL-2026-TAPC</span>
+                    <span>SCALE 1:1</span>
+                    <span>REV. A</span>
+                </div>
+            </div>
+
+            <div class="plate tick reveal">
+                <div class="plate-head">
+                    <span class="plate-no">PLATE 02</span>
+                    <h3 class="plate-title" data-i18n="rw-result-title">实验结果</h3>
+                    <span class="plate-tags">CLASS-INCREMENTAL · ACCURACY</span>
+                </div>
+                <div class="metric-strip">
+                    <div class="metric">
+                        <span class="rm-value">66.53%</span>
+                        <span class="rm-label">SplitCIFAR-100 (B=5120)</span>
+                    </div>
+                    <div class="metric">
+                        <span class="rm-value delta">+6.79%</span>
+                        <span class="rm-label" data-i18n="rw-vs">对比 IMCL (TNNLS'25)</span>
+                    </div>
+                    <div class="metric">
+                        <span class="rm-value">81.48%</span>
+                        <span class="rm-label">SplitCIFAR-10 (B=500)</span>
+                    </div>
+                    <div class="metric">
+                        <span class="rm-value delta">+4.83%</span>
+                        <span class="rm-label" data-i18n="rw-vs">对比 IMCL (TNNLS'25)</span>
+                    </div>
+                </div>
+                <figure class="plate-media">
+                    <img src="assets/project-tapc-result.png?v=2026" alt="TAPC Results">
+                    <figcaption data-i18n="rw-result-caption">在 SplitCIFAR-10 / 100 及 Tiny-ImageNet 上，TAPC 相较最新方法显著提升准确率</figcaption>
+                </figure>
+                <div class="plate-foot">
+                    <span>DWG NO. JL-2026-TAPC-R</span>
+                    <span>SCALE 1:1</span>
+                    <span>REV. A</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Projects ==================== -->
+    <section id="project" class="section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-index">04</span>
+                <div class="section-titles">
+                    <h2 class="section-title" data-i18n="project-heading">项目经历</h2>
+                    <span class="section-overline" data-i18n="overline-project">Projects</span>
+                </div>
+                <span class="section-rule" aria-hidden="true"></span>
+            </div>
+
+            <!-- Project 1: featured plate -->
+            <article class="plate plate-featured tick reveal">
+                <div class="pf-media">
+                    <span class="project-badge" data-i18n="project-badge">重点项目</span>
+                    <img src="assets/project-helmet.png?v=2026" alt="Helmet Detection Demo">
+                    <span class="pf-fig">FIG. 01 — DETECTION DEMO</span>
+                </div>
+                <div class="pf-body">
+                    <div class="pf-meta">
+                        <span class="plate-no">PJ-01</span>
+                        <span class="pf-cat">YOLO · 智慧交通</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="project-name">电动自行车骑行者头盔佩戴检测</h3>
+                    <p class="project-subtitle" data-i18n="project-subtitle">基于 YOLO 的目标检测 — 面向智慧交通安全场景</p>
+
+                    <div class="pf-cols">
+                        <div class="pf-col">
+                            <div class="project-section">
+                                <h4 data-i18n="project-bg-title">项目背景</h4>
+                                <p data-i18n="project-bg-text">随着电动自行车在城市交通中的快速增长，头盔佩戴合规性已成为关键的交通安全问题。本项目开发了一套基于视觉的自动化检测系统，用于在真实交通场景中识别电动自行车骑行者是否正确佩戴头盔。</p>
+                            </div>
+
+                            <div class="project-section">
+                                <h4 data-i18n="project-ch-title">研究挑战</h4>
+                                <ul class="challenge-list">
+                                    <li data-i18n="project-ch-small"><strong>小目标检测：</strong>监控画面中骑行者和头盔所占像素面积有限，特征信息不足。</li>
+                                    <li data-i18n="project-ch-flicker"><strong>标签闪烁：</strong>运动车辆在不同时刻遮挡状态不同，同一画面易预测出不同结果。</li>
+                                    <li data-i18n="project-ch-blur"><strong>运动模糊：</strong>快速行驶的电动车产生显著的运动模糊伪影。</li>
+                                    <li data-i18n="project-ch-complex"><strong>复杂背景：</strong>密集的城市环境造成高度遮挡和杂乱背景干扰。</li>
+                                    <li data-i18n="project-ch-noisy"><strong>噪声标注：</strong>真实场景数据集存在标签错误和边界框不一致等问题。</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-section">
+                                <h4 data-i18n="project-tech-title">技术改进策略</h4>
+                                <div class="tech-tags">
+                                    <span class="tag tag-tech">Wise-IoU 损失函数</span>
+                                    <span class="tag tag-tech">DySample 上采样</span>
+                                    <span class="tag tag-tech">ByteTrack 跟踪</span>
+                                    <span class="tag tag-tech">滑动窗口投票机制</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pf-col">
+                            <div class="project-section">
+                                <h4 data-i18n="project-sys-title">工程实现</h4>
+                                <p data-i18n="project-sys-text">基于 Flask 搭建 Web 检测平台，支持视频上传、实时推理与检测结果可视化。系统提供直观的操作界面，用户可上传交通监控录像，系统自动生成带有检测框标注的可视化结果。</p>
+                            </div>
+
+                            <div class="project-section">
+                                <h4 data-i18n="project-result-title">实验结果</h4>
+                                <div class="metric-strip ms-inline">
+                                    <div class="metric">
+                                        <span class="rm-value">0.855</span>
+                                        <span class="rm-label" data-i18n="project-r-map">mAP50</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="rm-value delta">+0.96%</span>
+                                        <span class="rm-label" data-i18n="project-r-gain">较 YOLO11n</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="rm-value">6.5 G</span>
+                                        <span class="rm-label" data-i18n="project-r-flops">计算量</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="rm-value rm-text" data-i18n="project-r-award">国家级三等奖</span>
+                                        <span class="rm-label" data-i18n="project-r-award-label">计算机设计大赛</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-links">
+                                <span class="project-link-hint" data-i18n="project-repo-hint">项目仓库</span>
+                                <a href="https://github.com/RJL816/YOLO-helmet" class="link-arrow" target="_blank" rel="noopener">View on GitHub <span class="arrow">&#8599;</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2: smart walker -->
+            <article class="plate plate-walker tick reveal">
+                <div class="pw-head">
+                    <span class="plate-no">PJ-02</span>
+                    <span class="tag tag-primary" data-i18n="project2-badge">省级大创</span>
+                    <span class="grade-chip" data-i18n="project2-grade">优秀结题</span>
+                </div>
+                <h3 class="project-title" data-i18n="project2-name">"智行者"智能拐杖 — 助力盲人出行</h3>
+                <p class="project-subtitle" data-i18n="project2-subtitle">省级大学生创新创业项目 · 嵌入式 AI · 多传感器融合</p>
+                <div class="project-aside">
+                    <img src="assets/project-smartwalker.png?v=2026" alt="Smart Walker System">
+                    <p class="aside-caption" data-i18n="project2-aside-caption">"智行者"智能拐杖</p>
+                </div>
+
+                <div class="project-section">
+                    <h4 data-i18n="project2-bg-title">项目背景</h4>
+                    <p data-i18n="project2-bg-text">针对视障人士出行困难的社会问题，本项目设计了一款基于多传感器融合的智能拐杖系统，结合激光雷达、摄像头与超声波传感器，实现对周围环境的全方位感知与实时障碍物预警，旨在为盲人提供安全、可靠的出行辅助。</p>
+                </div>
+
+                <div class="project-section">
+                    <h4 data-i18n="project2-tech-title">技术方案</h4>
+                    <div class="tech-tags">
+                        <span class="tag tag-tech">LiDAR 激光雷达</span>
+                        <span class="tag tag-tech">树莓派部署</span>
+                        <span class="tag tag-tech">YOLO 识别模型</span>
+                        <span class="tag tag-tech">STM32</span>
+                        <span class="tag tag-tech">超声波测距</span>
+                        <span class="tag tag-tech">摄像头</span>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h4 data-i18n="project2-role-title">我的工作</h4>
+                    <p data-i18n="project2-role-text">负责系统硬件电路的设计与搭建，完成激光雷达的调试与参数配置，实现 LiDAR 与树莓派之间的数据通信，确保多传感器数据的稳定采集与融合处理。</p>
+                </div>
+
+                <div class="project-section">
+                    <h4 data-i18n="project2-result-title">项目成果</h4>
+                    <p data-i18n="project2-result-text">系统在 0.5m / 1m / 1.5m 三档距离下完成前方、左前、右前三个方向的障碍物检测与语音提醒，可识别凳子、车辆、行人等目标，并集成 GPS 定位监护。项目获评省级大学生创新创业训练计划项目，以<strong>优秀等级结题</strong>。</p>
+                </div>
+                <div class="project-clear"></div>
+            </article>
+
+            <!-- Projects 3 & 4: side-project duo -->
+            <div class="duo">
+                <article class="duo-card tick reveal">
+                    <div class="duo-head">
+                        <span class="plate-no">PJ-03</span>
+                        <span class="tag tag-primary" data-i18n="project3-badge">个人项目</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="project4-name">Todo APP — 待办事项应用</h3>
+                    <p class="project-subtitle" data-i18n="project4-subtitle">个人项目 · Windows / Android 双端 · 全栈独立开发</p>
+                    <div class="duo-img">
+                        <img src="assets/project-todoapp.png?v=2026" alt="Todo APP Interface">
+                        <span class="aside-caption" data-i18n="project4-aside-caption">Todo APP 界面</span>
+                    </div>
+                    <div class="project-section">
+                        <h4 data-i18n="project4-desc-title">项目简介</h4>
+                        <p data-i18n="project4-desc-text">一款集成<strong>目标打卡、日程管理、智能课程表与备忘录</strong>的全能待办应用，支持 Windows 与 Android 双平台运行。结合奖励反馈机制（热力图统计、连续打卡里程碑、撒花庆祝与音效提示），让学习与生活管理更高效有趣。</p>
+                        <p data-i18n="project4-desc-text2">支持从 Excel 一键导入教务系统课程表、Android 端桌面小组件、每日/一次性任务分类管理等实用功能。从产品设计、界面交互到双端打包发布全程独立完成，全面锻炼了全栈工程与产品思维。</p>
+                        <div class="tech-tags">
+                            <span class="tag tag-tech">Windows / Android 双端</span>
+                            <span class="tag tag-tech">Excel 导入</span>
+                            <span class="tag tag-tech">桌面小组件</span>
+                            <span class="tag tag-tech">数据可视化</span>
+                        </div>
+                    </div>
+                    <div class="duo-links">
+                        <span class="project-link-hint" data-i18n="project-repo-hint">项目仓库</span>
+                        <a href="https://github.com/RJL816/TODOAPP" class="link-arrow" target="_blank" rel="noopener">View on GitHub <span class="arrow">&#8599;</span></a>
+                    </div>
+                </article>
+
+                <article class="duo-card tick reveal">
+                    <div class="duo-head">
+                        <span class="plate-no">PJ-04</span>
+                        <span class="tag tag-primary" data-i18n="project5-badge">个人项目</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="project5-name">Paper Insight — 论文阅读工具</h3>
+                    <p class="project-subtitle" data-i18n="project5-subtitle">个人项目 · 桌面端 · AI 辅助科研阅读</p>
+                    <div class="filmstrip" id="filmstrip">
+                        <img src="assets/project-paperinsight1.png?v=2026" alt="Paper Insight Screenshot 1">
+                        <img src="assets/project-paperinsight2.png?v=2026" alt="Paper Insight Screenshot 2">
+                        <img src="assets/project-paperinsight3.png?v=2026" alt="Paper Insight Screenshot 3">
+                    </div>
+                    <div class="film-meta">
+                        <span>IMG <b id="film-idx">01</b> / 03</span>
+                        <span data-i18n="project5-gallery-hint">滑动查看 →</span>
+                    </div>
+                    <div class="project-section">
+                        <h4 data-i18n="project5-desc-title">项目简介</h4>
+                        <p data-i18n="project5-desc-text">一款面向科研人员的<strong>本地学术论文阅读助手</strong>，导入 PDF 即可获得 AI 精读报告、双语对照翻译、划词翻译、Markdown 笔记、生词本与 AI 多轮问答。所有数据保存在本地，兼顾效率与隐私。</p>
+                        <p data-i18n="project5-desc-text2">支持树形文献库管理、按分类/年份筛选、Doc2X 高精度解析、双语翻译导出为中文 PDF 等功能，并兼容 DeepSeek / OpenAI / 通义千问等多种 AI 接口。项目源于自身科研阅读痛点，独立完成从需求分析、架构设计到全功能实现。</p>
+                        <div class="tech-tags">
+                            <span class="tag tag-tech">AI 精读报告</span>
+                            <span class="tag tag-tech">划词翻译</span>
+                            <span class="tag tag-tech">Markdown 笔记</span>
+                            <span class="tag tag-tech">生词本</span>
+                            <span class="tag tag-tech">本地存储</span>
+                        </div>
+                    </div>
+                    <div class="duo-links">
+                        <span class="project-link-hint" data-i18n="project-repo-hint">项目仓库</span>
+                        <a href="https://github.com/RJL816/PaperInsight" class="link-arrow" target="_blank" rel="noopener">View on GitHub <span class="arrow">&#8599;</span></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Publications ==================== -->
+    <section id="publications" class="section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-index">05</span>
+                <div class="section-titles">
+                    <h2 class="section-title" data-i18n="pub-heading">论文成果</h2>
+                    <span class="section-overline" data-i18n="overline-pub">Publications</span>
+                </div>
+                <span class="section-rule" aria-hidden="true"></span>
+            </div>
+            <div class="pub-card tick reveal">
+                <span class="pub-index">P-01</span>
+                <div class="pub-body">
+                    <h3 class="pub-title" data-i18n="pub1-title">Trace-Anchored Projector Consolidation: A Lightweight Approach to Class-Incremental Learning</h3>
+                    <p class="pub-authors" data-i18n="pub1-authors"><strong>Qiang Wang, Jialun Ren, Zijian Zhao, Shuang Wei</strong> </p>
+                    <p class="pub-venue" data-i18n="pub1-venue">撰写中，2026.</p>
+                    <div class="pub-tags">
+                        <span class="tag tag-outline">Continual Learning</span>
+                        <span class="tag tag-outline">Class-IL</span>
+                        <span class="tag tag-outline">Catastrophic Forgetting</span>
+                    </div>
+                </div>
+                <span class="stamp" data-i18n="pub-stamp">撰写中</span>
+            </div>
+            <!-- TODO: 添加更多论文, 复制上方 .pub-card 结构并补充对应 i18n 键 -->
+        </div>
+    </section>
+
+    <!-- ==================== Awards ==================== -->
+    <section id="awards" class="section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-index">06</span>
+                <div class="section-titles">
+                    <h2 class="section-title" data-i18n="awards-heading">获奖荣誉</h2>
+                    <span class="section-overline" data-i18n="overline-awards">Honors</span>
+                </div>
+                <span class="section-rule" aria-hidden="true"></span>
+            </div>
+
+            <div class="tl reveal">
+                <div class="tl-year">
+                    <span class="tl-label">2026</span>
+                    <div class="tl-items">
+                        <div class="tl-item">
+                            <strong data-i18n="award-cdc-title">中国大学生计算机设计大赛 国家级三等奖</strong>
+                            <p data-i18n="award-cdc-desc">国家级 · "云视智盔"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tl-year">
+                    <span class="tl-label">2025</span>
+                    <div class="tl-items">
+                        <div class="tl-item">
+                            <strong data-i18n="award-math16-title">第十六届全国大学生数学竞赛一等奖</strong>
+                            <p data-i18n="award-math-desc">省级</p>
+                        </div>
+                        <div class="tl-item">
+                            <strong data-i18n="award-math17-title">第十七届全国大学生数学竞赛二等奖</strong>
+                            <p data-i18n="award-math-desc">省级</p>
+                        </div>
+                        <div class="tl-item">
+                            <strong data-i18n="award3-title">华北电力大学一等奖学金</strong>
+                            <p data-i18n="award4-desc">华北电力大学</p>
+                        </div>
+                        <div class="tl-item">
+                            <strong data-i18n="award6-title">省级大学生创新创业训练项目（优秀结题）</strong>
+                            <p data-i18n="award6-desc">省级 · "智行者"智能拐杖</p>
+                        </div>
+                        <div class="tl-item">
+                            <strong data-i18n="award-smartcar-title">华北电力大学智能车竞赛三等奖</strong>
+                            <p data-i18n="award4-desc">华北电力大学</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tl-year">
+                    <span class="tl-label">2024</span>
+                    <div class="tl-items">
+                        <div class="tl-item">
+                            <strong data-i18n="award1-title">华北电力大学二等奖学金</strong>
+                            <p data-i18n="award1-desc">华北电力大学</p>
+                        </div>
+                        <div class="tl-item">
+                            <strong data-i18n="award2-title">华北电力大学校三好学生</strong>
+                            <p data-i18n="award2-desc">华北电力大学（连续两年）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="hand-note awards-note reveal" data-i18n="awards-note">✎ 共 10+ 项荣誉 · 以下为代表性奖项</p>
+        </div>
+    </section>
+
+    <!-- ==================== Skills ==================== -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-index">07</span>
+                <div class="section-titles">
+                    <h2 class="section-title" data-i18n="skills-heading">专业技能</h2>
+                    <span class="section-overline" data-i18n="overline-skills">Skills</span>
+                </div>
+                <span class="section-rule" aria-hidden="true"></span>
+            </div>
+            <div class="skills-grid">
+                <div class="drawer reveal">
+                    <div class="drawer-handle"><span class="grip"><i></i><i></i><i></i></span><span class="drawer-no">DRAWER 01</span></div>
+                    <div class="drawer-body">
+                        <h3 data-i18n="skills-prog">编程语言</h3>
+                        <div class="skill-tags">
+                            <span class="tag tag-skill">Python</span>
+                            <span class="tag tag-skill">C / C++</span>
+                            <span class="tag tag-skill">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawer reveal">
+                    <div class="drawer-handle"><span class="grip"><i></i><i></i><i></i></span><span class="drawer-no">DRAWER 02</span></div>
+                    <div class="drawer-body">
+                        <h3 data-i18n="skills-frame">框架与库</h3>
+                        <div class="skill-tags">
+                            <span class="tag tag-skill">PyTorch</span>
+                            <span class="tag tag-skill">Flask</span>
+                            <span class="tag tag-skill">OpenCV</span>
+                            <span class="tag tag-skill">NumPy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawer reveal">
+                    <div class="drawer-handle"><span class="grip"><i></i><i></i><i></i></span><span class="drawer-no">DRAWER 03</span></div>
+                    <div class="drawer-body">
+                        <h3 data-i18n="skills-tools">工具与平台</h3>
+                        <div class="skill-tags">
+                            <span class="tag tag-skill">Git</span>
+                            <span class="tag tag-skill">Zotero</span>
+                            <span class="tag tag-skill">LaTeX</span>
+                            <span class="tag tag-skill">Obsidian</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawer reveal">
+                    <div class="drawer-handle"><span class="grip"><i></i><i></i><i></i></span><span class="drawer-no">DRAWER 04</span></div>
+                    <div class="drawer-body">
+                        <h3 data-i18n="skills-research">研究技能</h3>
+                        <div class="skill-tags">
+                            <span class="tag tag-skill">YOLO Series</span>
+                            <span class="tag tag-skill">Object Detection</span>
+                            <span class="tag tag-skill">Continual Learning</span>
+                            <span class="tag tag-skill">Ablation Study</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Contact ==================== -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-index">08</span>
+                <div class="section-titles">
+                    <h2 class="section-title" data-i18n="contact-heading">联系方式</h2>
+                    <span class="section-overline" data-i18n="overline-contact">Contact</span>
+                </div>
+                <span class="section-rule" aria-hidden="true"></span>
+            </div>
+            <h3 class="contact-big reveal" data-i18n="contact-big">聊聊研究，<br>也聊聊别的。</h3>
+            <p class="hand-note contact-note reveal" data-i18n="contact-note">✉ 邮件 24 小时内回复</p>
+            <p class="contact-intro reveal" data-i18n="contact-intro">欢迎学术交流与合作探讨，期待与您联系！</p>
+            <div class="contact-grid reveal">
+                <a href="mailto:renjl323@163.com" class="contact-card tick">
+                    <span class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </span>
+                    <div class="contact-text">
+                        <strong data-i18n="contact-email">邮箱</strong>
+                        <p>renjl323@163.com</p>
+                    </div>
+                    <span class="contact-arrow">&#8599;</span>
+                </a>
+                <a href="https://github.com/RJL816" class="contact-card tick" target="_blank" rel="noopener">
+                    <span class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+                    </span>
+                    <div class="contact-text">
+                        <strong>GitHub</strong>
+                        <p>github.com/RJL816</p>
+                    </div>
+                    <span class="contact-arrow">&#8599;</span>
+                </a>
+                <a href="https://RJL816.github.io" class="contact-card tick" target="_blank" rel="noopener">
+                    <span class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </span>
+                    <div class="contact-text">
+                        <strong data-i18n="contact-homepage">个人主页</strong>
+                        <p>RJL816.github.io</p>
+                    </div>
+                    <span class="contact-arrow">&#8599;</span>
+                </a>
+                <a href="assets/cv.pdf?v=20260820" class="contact-card tick" target="_blank">
+                    <span class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <div class="contact-text">
+                        <strong data-i18n="contact-cv">简历</strong>
+                        <p data-i18n="contact-cv-desc">下载 PDF</p>
+                    </div>
+                    <span class="contact-arrow">&#8599;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ==================== Footer (drawing title block) ==================== -->
+    <footer id="footer">
+        <div class="container">
+            <p class="footer-sign reveal">任佳伦 <i>Jialun Ren</i></p>
+            <div class="title-block reveal">
+                <div class="tb-cell"><span class="tb-k">设计 DESIGNED</span><span class="tb-v">任佳伦 · Jialun Ren</span></div>
+                <div class="tb-cell"><span class="tb-k">图号 DWG NO.</span><span class="tb-v">JL-2026-WEB</span></div>
+                <div class="tb-cell"><span class="tb-k">比例 SCALE</span><span class="tb-v">1 : 1</span></div>
+                <div class="tb-cell"><span class="tb-k">版次 REV · 日期 DATE</span><span class="tb-v">A · 2026.01</span></div>
+            </div>
+            <p class="footer-text" data-i18n="footer-text">&copy; 2026 Jialun Ren. Powered by GitHub Pages.</p>
+            <p class="footer-mono">NO FRAMEWORKS · NO BUILD TOOLS · JUST HTML / CSS / JS</p>
+        </div>
+    </footer>
+
+    <!-- ==================== Back to Top ==================== -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+    <!-- ==================== Scripts ==================== -->
+    <script>
+    // ============================================================
+    // 中英文切换 (i18n) — zh/en 字典须与 HTML 中的 data-i18n 键保持一致
+    // ============================================================
+    var i18n = {
+        zh: {
+            // Nav
+            'nav-about': '关于我',
+            'nav-research': '科研工作',
+            'nav-project': '项目经历',
+            'nav-publications': '论文成果',
+            'nav-awards': '获奖荣誉',
+            'nav-skills': '专业技能',
+            'nav-contact': '联系方式',
+
+            // Hero
+            'hero-identity': '计算机科学与技术 · 本科生',
+            'hero-affiliation': '华北电力大学 · 计算机学院',
+            'btn-cv': '查看简历',
+            'btn-email': '联系我',
+            'hero-note': '保研准备中 · 期待与导师联系 ↝',
+            'plate-origin': '华北电力大学',
+            'plate-status': '保研准备中',
+
+            // Hero nameplate (traits)
+            'sidecard-label': '个人特质',
+            'sidecard-hobby1': '喜欢画画',
+            'sidecard-hobby2': '热爱运动',
+            'sidecard-hobby3': '动手能力强',
+            'sidecard-hobby4': '爱钻研',
+
+            // About
+            'overline-about': 'About',
+            'about-heading': '关于我',
+            'about-p1': '我是<strong>华北电力大学</strong><strong>计算机科学与技术</strong>专业的本科生（GPA 90.70/100，专业排名 5/100），现正积极准备<strong>保研/夏令营</strong>申请，期待与有意向的导师建立联系，在计算机领域继续深造。',
+            'about-p2': '我本科期间的研究方向聚焦<strong>图像领域的持续学习</strong>——在科研期间阅读了许多经典文献，在老师的指导下受人类记忆机制启发，探索轻量级的抗灾难性遗忘方法，相关论文正在撰写中。',
+            'about-p3': '在工程实践方面，我具备扎实的编程基础（Python / C++ / JavaScript）和深度学习框架（PyTorch）使用经验，能够独立完成从数据处理、模型训练到系统部署的全流程开发。主导开发的"云视智盔"系统，通过引入动态形变感知重采样模块与改进损失函数，显著提升了复杂场景下的检测精度。',
+            'stat1-label': 'GPA',
+            'stat2-label': '专业排名',
+            'stat3-label': '荣誉奖项',
+            'about-note': '✎ 数据截至 2026.08 · 持续更新中',
+
+            // Research
+            'overline-research': 'Research',
+            'research-heading': '研究方向',
+            'research-cl-title': '持续学习',
+            'research-cl-desc': '研究视觉模型在连续任务流中的灾难性遗忘问题，主要聚焦 Class-IL 类增量学习设置，缓解稳定性-可塑性矛盾及灾难性遗忘问题。',
+            'research-od-title': '目标检测与 YOLO 改进',
+            'research-od-desc': '聚焦小目标、遮挡、运动模糊等复杂场景，改进 YOLO 系列检测器。主导开发的"云视智盔"系统引入动态形变感知上采样与 WIoU 损失，面向智慧交通实现高精度头盔检测。',
+            'research-dl-title': '深度学习与模型优化',
+            'research-dl-desc': '深入掌握卷积神经网络、Transformer 架构及 PyTorch 框架。研究方向涵盖模型轻量化设计、训练策略优化、损失函数重构，以及在噪声标注环境下的鲁棒性训练。',
+            'research-eng-title': '工程实践',
+            'research-eng-desc': '具备 Python / C++ / JavaScript 编程能力，能够独立完成从数据处理、模型训练到系统部署的全流程。课余自主开发待办事项 APP、论文阅读工具等，持续精进工程能力。',
+
+            // Project 1
+            'overline-project': 'Projects',
+            'project-heading': '项目经历',
+            'project-badge': '重点项目',
+            'project-name': '电动自行车骑行者头盔佩戴检测',
+            'project-subtitle': '基于 YOLO 的目标检测 — 面向智慧交通安全场景',
+            'project-bg-title': '项目背景',
+            'project-bg-text': '随着电动自行车在城市交通中的快速增长，头盔佩戴合规性已成为关键的交通安全问题。本项目开发了一套基于视觉的自动化检测系统，用于在真实交通场景中识别电动自行车骑行者是否正确佩戴头盔。',
+            'project-ch-title': '研究挑战',
+            'project-ch-small': '<strong>小目标检测：</strong>监控画面中骑行者和头盔所占像素面积有限，特征信息不足。',
+            'project-ch-flicker': '<strong>标签闪烁：</strong>运动车辆在不同时刻遮挡状态不同，同一画面易预测出不同结果。',
+            'project-ch-blur': '<strong>运动模糊：</strong>快速行驶的电动车产生显著的运动模糊伪影。',
+            'project-ch-complex': '<strong>复杂背景：</strong>密集的城市环境造成高度遮挡和杂乱背景干扰。',
+            'project-ch-noisy': '<strong>噪声标注：</strong>真实场景数据集存在标签错误和边界框不一致等问题。',
+            'project-tech-title': '技术改进策略',
+            'project-sys-title': '工程实现',
+            'project-sys-text': '基于 Flask 搭建 Web 检测平台，支持视频上传、实时推理与检测结果可视化。系统提供直观的操作界面，用户可上传交通监控录像，系统自动生成带有检测框标注的可视化结果。',
+            'project-result-title': '实验结果',
+            'project-r-map': 'mAP50',
+            'project-r-gain': '较 YOLO11n',
+            'project-r-flops': '计算量',
+            'project-r-award': '国家级三等奖',
+            'project-r-award-label': '计算机设计大赛',
+            'project-repo-hint': '项目仓库',
+
+            // Project 2
+            'project2-badge': '省级大创',
+            'project2-grade': '优秀结题',
+            'project2-name': '"智行者"智能拐杖 — 助力盲人出行',
+            'project2-subtitle': '省级大学生创新创业项目 · 嵌入式 AI · 多传感器融合',
+            'project2-bg-title': '项目背景',
+            'project2-bg-text': '针对视障人士出行困难的社会问题，本项目设计了一款基于多传感器融合的智能拐杖系统，结合激光雷达、摄像头与超声波传感器，实现对周围环境的全方位感知与实时障碍物预警，旨在为盲人提供安全、可靠的出行辅助。',
+            'project2-tech-title': '技术方案',
+            'project2-role-title': '我的工作',
+            'project2-role-text': '负责系统硬件电路的设计与搭建，完成激光雷达的调试与参数配置，实现 LiDAR 与树莓派之间的数据通信，确保多传感器数据的稳定采集与融合处理。',
+            'project2-result-title': '项目成果',
+            'project2-result-text': '系统在 0.5m / 1m / 1.5m 三档距离下完成前方、左前、右前三个方向的障碍物检测与语音提醒，可识别凳子、车辆、行人等目标，并集成 GPS 定位监护。项目获评省级大学生创新创业训练计划项目，以<strong>优秀等级结题</strong>。',
+            'project2-aside-caption': '"智行者"智能拐杖',
+
+            // Research Work (TAPC)
+            'overline-rw': 'Research Work',
+            'rw-heading': '当前科研工作',
+            'rw-intro': '本项目针对类增量学习（Class-IL）设置下的灾难性遗忘问题，提出 <strong>Trace-Anchored Projector Consolidation (TAPC)</strong>——一种受人类记忆机制启发的轻量化抗遗忘方法。以预训练 ResNet-18 / ViT 为骨干获取稳定视觉特征，将每次梯度更新后的投影头参数状态视为一条"学习痕迹"，通过 EMA 周期性聚合近期痕迹形成 Anchor Projector，约束后续投影头更新，在保持新任务学习能力的同时显著减少旧知识遗忘。',
+            'rw-method-title': '方法框架',
+            'rw-method-caption': 'TAPC：基于学习痕迹的投影头巩固机制',
+            'rw-result-title': '实验结果',
+            'rw-vs': '对比 IMCL (TNNLS\'25)',
+            'rw-result-fig-title': '结果可视化',
+            'rw-result-caption': '在 SplitCIFAR-10 / 100 及 Tiny-ImageNet 上，TAPC 相较最新方法显著提升准确率',
+
+            // Project 3: Todo APP
+            'project3-badge': '个人项目',
+            'project4-name': 'Todo APP — 待办事项应用',
+            'project4-subtitle': '个人项目 · Windows / Android 双端 · 全栈独立开发',
+            'project4-desc-title': '项目简介',
+            'project4-desc-text': '一款集成<strong>目标打卡、日程管理、智能课程表与备忘录</strong>的全能待办应用，支持 Windows 与 Android 双平台运行。结合奖励反馈机制（热力图统计、连续打卡里程碑、撒花庆祝与音效提示），让学习与生活管理更高效有趣。',
+            'project4-desc-text2': '支持从 Excel 一键导入教务系统课程表、Android 端桌面小组件、每日/一次性任务分类管理等实用功能。从产品设计、界面交互到双端打包发布全程独立完成，全面锻炼了全栈工程与产品思维。',
+            'project4-aside-caption': 'Todo APP 界面',
+
+            // Project 5: Paper Insight
+            'project5-badge': '个人项目',
+            'project5-name': 'Paper Insight — 论文阅读工具',
+            'project5-subtitle': '个人项目 · 桌面端 · AI 辅助科研阅读',
+            'project5-desc-title': '项目简介',
+            'project5-desc-text': '一款面向科研人员的<strong>本地学术论文阅读助手</strong>，导入 PDF 即可获得 AI 精读报告、双语对照翻译、划词翻译、Markdown 笔记、生词本与 AI 多轮问答。所有数据保存在本地，兼顾效率与隐私。',
+            'project5-desc-text2': '支持树形文献库管理、按分类/年份筛选、Doc2X 高精度解析、双语翻译导出为中文 PDF 等功能，并兼容 DeepSeek / OpenAI / 通义千问等多种 AI 接口。项目源于自身科研阅读痛点，独立完成从需求分析、架构设计到全功能实现。',
+            'project5-gallery-hint': '滑动查看 →',
+
+            // Publications
+            'overline-pub': 'Publications',
+            'pub-heading': '论文成果',
+            'pub1-title': 'Trace-Anchored Projector Consolidation: A Lightweight Approach to Class-Incremental Learning',
+            'pub1-authors': '<strong>Qiang Wang, Jialun Ren, Zijian Zhao, Shuang Wei</strong> ',
+            'pub1-venue': '撰写中，2026.',
+            'pub-stamp': '撰写中',
+
+            // Awards
+            'overline-awards': 'Honors',
+            'awards-heading': '获奖荣誉',
+            'awards-note': '✎ 共 10+ 项荣誉 · 以下为代表性奖项',
+            'award-cdc-title': '中国大学生计算机设计大赛 国家级三等奖',
+            'award-cdc-desc': '国家级 · "云视智盔"',
+            'award-math16-title': '第十六届全国大学生数学竞赛一等奖',
+            'award-math17-title': '第十七届全国大学生数学竞赛二等奖',
+            'award-math-desc': '省级',
+            'award1-title': '华北电力大学二等奖学金',
+            'award1-desc': '华北电力大学',
+            'award2-title': '华北电力大学校三好学生',
+            'award2-desc': '华北电力大学（连续两年）',
+            'award3-title': '华北电力大学一等奖学金',
+            'award4-desc': '华北电力大学',
+            'award6-title': '省级大学生创新创业训练项目（优秀结题）',
+            'award6-desc': '省级 · "智行者"智能拐杖',
+            'award-smartcar-title': '华北电力大学智能车竞赛三等奖',
+
+            // Skills
+            'overline-skills': 'Skills',
+            'skills-heading': '专业技能',
+            'skills-prog': '编程语言',
+            'skills-frame': '框架与库',
+            'skills-tools': '工具与平台',
+            'skills-research': '研究技能',
+
+            // Contact
+            'overline-contact': 'Contact',
+            'contact-heading': '联系方式',
+            'contact-intro': '欢迎学术交流与合作探讨，期待与您联系！',
+            'contact-big': '聊聊研究，<br>也聊聊别的。',
+            'contact-note': '✉ 邮件 24 小时内回复',
+            'contact-email': '邮箱',
+            'contact-homepage': '个人主页',
+            'contact-cv': '简历',
+            'contact-cv-desc': '下载 PDF',
+
+            // Footer
+            'footer-text': '&copy; 2026 Jialun Ren. Powered by GitHub Pages.'
+        },
+
+        en: {
+            // Nav
+            'nav-about': 'About',
+            'nav-research': 'Research',
+            'nav-project': 'Projects',
+            'nav-publications': 'Publications',
+            'nav-awards': 'Awards',
+            'nav-skills': 'Skills',
+            'nav-contact': 'Contact',
+
+            // Hero
+            'hero-identity': 'Undergraduate, Computer Science and Technology',
+            'hero-affiliation': 'School of Computer Science, NCEPU',
+            'btn-cv': 'View CV',
+            'btn-email': 'Email Me',
+            'hero-note': 'Open to connecting with advisors ↝',
+            'plate-origin': 'NCEPU',
+            'plate-status': 'Seeking Advisor',
+
+            // Hero nameplate (traits)
+            'sidecard-label': 'About Me',
+            'sidecard-hobby1': 'Painting',
+            'sidecard-hobby2': 'Sports',
+            'sidecard-hobby3': 'Hands-on',
+            'sidecard-hobby4': 'Curious & Driven',
+
+            // About
+            'overline-about': 'About',
+            'about-heading': 'About Me',
+            'about-p1': 'I am an undergraduate student majoring in <strong>Computer Science and Technology</strong> at <strong>North China Electric Power University</strong> (GPA 90.70/100, ranked 5/100). I am actively preparing for graduate school applications and look forward to connecting with prospective advisors.',
+            'about-p2': 'My research focuses on <strong>continual learning for visual models</strong>. Guided by my advisor and inspired by human memory mechanisms, I explore lightweight approaches to mitigate catastrophic forgetting. A related paper is currently in preparation.',
+            'about-p3': 'On the engineering side, I have solid programming skills (Python / C++ / JavaScript) and hands-on experience with PyTorch, and I can independently handle the full pipeline from data processing and model training to deployment. The helmet-detection system I led improves accuracy in complex traffic scenes via a dynamic deformation-aware resampling module and an improved loss function.',
+            'stat1-label': 'GPA',
+            'stat2-label': 'Major Rank',
+            'stat3-label': 'Honors & Awards',
+            'about-note': '✎ As of Aug 2026 · updating',
+
+            // Research
+            'overline-research': 'Research',
+            'research-heading': 'Research Interests',
+            'research-cl-title': 'Continual Learning',
+            'research-cl-desc': 'Investigating catastrophic forgetting of visual models over sequential task streams, mainly under the Class-IL setting, to alleviate the stability-plasticity dilemma.',
+            'research-od-title': 'Object Detection & YOLO',
+            'research-od-desc': 'Improving YOLO-series detectors for challenging scenes with small objects, occlusion and motion blur. The helmet-detection system I led introduces DySample upsampling and WIoU loss for intelligent transportation.',
+            'research-dl-title': 'Deep Learning & Model Optimization',
+            'research-dl-desc': 'Solid grasp of CNNs, Transformer architectures and PyTorch. Interests include lightweight model design, training strategies, loss redesign, and robust training under noisy annotations.',
+            'research-eng-title': 'Engineering Practice',
+            'research-eng-desc': 'Proficient in Python / C++ / JavaScript, able to independently complete the full pipeline from data processing and model training to deployment. I also build side projects such as a to-do app and a paper-reading tool.',
+
+            // Project 1
+            'overline-project': 'Projects',
+            'project-heading': 'Selected Projects',
+            'project-badge': 'Featured',
+            'project-name': 'Helmet-Wearing Detection for E-Bike Riders',
+            'project-subtitle': 'YOLO-based Object Detection for Intelligent Traffic Safety',
+            'project-bg-title': 'Background',
+            'project-bg-text': 'With the rapid growth of e-bikes in urban traffic, helmet compliance has become a critical safety issue. This project builds a vision-based system that automatically detects whether e-bike riders wear helmets in real-world traffic scenes.',
+            'project-ch-title': 'Challenges',
+            'project-ch-small': '<strong>Small objects:</strong> riders and helmets occupy very limited pixel areas in surveillance footage.',
+            'project-ch-flicker': '<strong>Label flickering:</strong> moving vehicles are occluded differently across frames, causing inconsistent predictions.',
+            'project-ch-blur': '<strong>Motion blur:</strong> fast-moving e-bikes introduce significant blur artifacts.',
+            'project-ch-complex': '<strong>Complex backgrounds:</strong> dense urban scenes bring heavy occlusion and clutter.',
+            'project-ch-noisy': '<strong>Noisy annotations:</strong> real-world datasets contain label errors and inconsistent boxes.',
+            'project-tech-title': 'Technical Improvements',
+            'project-sys-title': 'System Implementation',
+            'project-sys-text': 'A Flask-based web platform supporting video upload, real-time inference and result visualization. Users can upload traffic footage and the system renders annotated detection results automatically.',
+            'project-result-title': 'Results',
+            'project-r-map': 'mAP50',
+            'project-r-gain': 'vs YOLO11n',
+            'project-r-flops': 'Compute',
+            'project-r-award': 'National 3rd',
+            'project-r-award-label': 'Comp. Design Contest',
+            'project-repo-hint': 'Repository',
+
+            // Project 2
+            'project2-badge': 'Provincial Project',
+            'project2-grade': 'Excellent',
+            'project2-name': '"Smart Walker" Intelligent Cane',
+            'project2-subtitle': 'Provincial Innovation & Entrepreneurship Project · Embedded AI · Multi-Sensor Fusion',
+            'project2-bg-title': 'Background',
+            'project2-bg-text': 'To address mobility difficulties faced by the visually impaired, this project designs an intelligent cane based on multi-sensor fusion, combining LiDAR, camera and ultrasonic sensors for omnidirectional perception and real-time obstacle alerts.',
+            'project2-tech-title': 'Technical Approach',
+            'project2-role-title': 'My Contributions',
+            'project2-role-text': 'Designed and built the hardware circuits, completed LiDAR debugging and parameter configuration, and established data communication between the LiDAR and the Raspberry Pi, ensuring stable multi-sensor data acquisition and fusion.',
+            'project2-result-title': 'Outcomes',
+            'project2-result-text': 'The system performs obstacle detection and voice alerts across three distance thresholds (0.5m / 1m / 1.5m) and three directions (front, front-left, front-right), recognizing targets such as chairs, vehicles and pedestrians, with integrated GPS positioning. Rated as a Provincial Innovation & Entrepreneurship Training Program, completed with an <strong>Excellent grade</strong>.',
+            'project2-aside-caption': '"Smart Walker" Cane',
+
+            // Research Work (TAPC)
+            'overline-rw': 'Research Work',
+            'rw-heading': 'Current Research',
+            'rw-intro': 'Targeting catastrophic forgetting under the Class-Incremental Learning (Class-IL) setting, this work proposes <strong>Trace-Anchored Projector Consolidation (TAPC)</strong> — a lightweight anti-forgetting method inspired by human memory. Using pretrained ResNet-18 / ViT backbones for stable visual features, each post-gradient projector state is treated as a learning "trace". EMA periodically aggregates recent traces into an Anchor Projector that constrains subsequent projector updates, significantly reducing old-knowledge forgetting while preserving new-task learning.',
+            'rw-method-title': 'Method Framework',
+            'rw-method-caption': 'TAPC: trace-anchored projector consolidation',
+            'rw-result-title': 'Results',
+            'rw-vs': 'vs IMCL (TNNLS\'25)',
+            'rw-result-fig-title': 'Results Visualization',
+            'rw-result-caption': 'On SplitCIFAR-10 / 100 and Tiny-ImageNet, TAPC significantly improves accuracy over recent methods',
+
+            // Project 3: Todo APP
+            'project3-badge': 'Side Project',
+            'project4-name': 'Todo APP',
+            'project4-subtitle': 'Side Project · Windows & Android · Full-Stack Solo Build',
+            'project4-desc-title': 'Overview',
+            'project4-desc-text': 'An all-in-one productivity app combining <strong>habit check-ins, schedule management, a smart timetable and a memo</strong>, running on both Windows and Android. Reward feedback (GitHub-style heatmap, streak milestones, confetti and sound effects) keeps daily planning engaging and fun.',
+            'project4-desc-text2': 'Practical features include one-click Excel import of the academic timetable, an Android home-screen widget, and separate daily / one-time task management. Built end-to-end solo — from product design and UX to cross-platform packaging and release — fully exercising full-stack engineering and product thinking.',
+            'project4-aside-caption': 'Todo APP Interface',
+
+            // Project 5: Paper Insight
+            'project5-badge': 'Side Project',
+            'project5-name': 'Paper Insight',
+            'project5-subtitle': 'Side Project · Desktop · AI-Assisted Research Reading',
+            'project5-desc-title': 'Overview',
+            'project5-desc-text': 'A <strong>local academic paper reading assistant</strong> for researchers. Import a PDF to get an AI close-reading report, bilingual side-by-side translation, in-text word translation, Markdown notes, a vocabulary book and multi-turn AI Q&A — all stored locally for both efficiency and privacy.',
+            'project5-desc-text2': 'Features a tree-structured library with category / year filters, high-precision Doc2X parsing, and bilingual-translation export to a Chinese PDF. Compatible with DeepSeek, OpenAI, Qwen and other AI backends. Born from my own research-reading pain points, built solo from requirements analysis and architecture to full implementation.',
+            'project5-gallery-hint': 'Swipe →',
+
+            // Publications
+            'overline-pub': 'Publications',
+            'pub-heading': 'Publications',
+            'pub1-title': 'Trace-Anchored Projector Consolidation: A Lightweight Approach to Class-Incremental Learning',
+            'pub1-authors': '<strong>Jialun Ren</strong>, et al.',
+            'pub1-venue': 'In preparation, 2026.',
+            'pub-stamp': 'IN PREP.',
+
+            // Awards
+            'overline-awards': 'Honors',
+            'awards-heading': 'Awards & Honors',
+            'awards-note': '✎ 10+ honors in total · selected highlights',
+            'award-cdc-title': '3rd Prize (National), China Collegiate Computing Contest',
+            'award-cdc-desc': 'National · "Helmet Vision"',
+            'award-math16-title': '1st Prize, 16th Chinese Mathematical Competition (CMC)',
+            'award-math17-title': '2nd Prize, 17th Chinese Mathematical Competition (CMC)',
+            'award-math-desc': 'Provincial Level',
+            'award1-title': 'Second-Class Scholarship',
+            'award1-desc': 'North China Electric Power University',
+            'award2-title': 'Merit Student',
+            'award2-desc': 'North China Electric Power University (two consecutive years)',
+            'award3-title': 'First-Class Scholarship',
+            'award4-desc': 'North China Electric Power University',
+            'award6-title': 'Provincial Innovation & Entrepreneurship Training Program (Excellent)',
+            'award6-desc': 'Provincial · "Smart Walker" intelligent cane',
+            'award-smartcar-title': '3rd Prize, NCEPU Smart Car Competition',
+
+            // Skills
+            'overline-skills': 'Skills',
+            'skills-heading': 'Skills',
+            'skills-prog': 'Programming',
+            'skills-frame': 'Frameworks & Libraries',
+            'skills-tools': 'Tools & Platforms',
+            'skills-research': 'Research',
+
+            // Contact
+            'overline-contact': 'Contact',
+            'contact-heading': 'Contact',
+            'contact-intro': 'I am always open to academic collaboration and research discussions. Feel free to reach out!',
+            'contact-big': 'Let\'s talk research,<br>and everything else.',
+            'contact-note': '✉ Replies within 24 hours',
+            'contact-email': 'Email',
+            'contact-homepage': 'Homepage',
+            'contact-cv': 'CV / Resume',
+            'contact-cv-desc': 'Download PDF',
+
+            // Footer
+            'footer-text': '&copy; 2026 Jialun Ren. Powered by GitHub Pages.'
+        }
+    };
+
+    var currentLang = localStorage.getItem('lang') || 'zh';
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+
+        document.documentElement.lang = (lang === 'zh') ? 'zh-CN' : 'en';
+        document.title = (lang === 'zh') ? '任佳伦 | 个人主页' : 'Jialun Ren | Personal Homepage';
+
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            var key = el.getAttribute('data-i18n');
+            if (i18n[lang] && i18n[lang][key] !== undefined) {
+                el.innerHTML = i18n[lang][key];
+            }
+        });
+
+        document.getElementById('lang-toggle').classList.toggle('lang-en-active', lang === 'en');
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', function() {
+        setLanguage(currentLang === 'zh' ? 'en' : 'zh');
+    });
+
+    // Normalize initial content from the dictionary
+    setLanguage(currentLang);
+
+    // ---- Mobile menu ----
+    var menuToggle = document.getElementById('menu-toggle');
+    var navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        menuToggle.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            navLinks.classList.remove('open');
+            menuToggle.classList.remove('open');
+        });
+    });
+
+    // ---- Scroll progress trace ----
+    var progress = document.getElementById('progress');
+    var navbar = document.getElementById('navbar');
+    var backToTop = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', function() {
+        var h = document.documentElement;
+        var max = h.scrollHeight - h.clientHeight;
+        progress.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+        navbar.classList.toggle('scrolled', window.scrollY > 24);
+        backToTop.classList.toggle('visible', window.scrollY > 600);
+    }, { passive: true });
+
+    backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ---- Anchor rail (traces) ----
+    var railIds = ['hero', 'about', 'research', 'research-work', 'project', 'publications', 'awards', 'skills', 'contact'];
+    var rail = document.getElementById('rail');
+    railIds.forEach(function(id) {
+        var b = document.createElement('button');
+        b.className = 'rail-dot';
+        b.setAttribute('data-target', id);
+        b.setAttribute('aria-label', id);
+        b.title = id;
+        b.addEventListener('click', function() {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        });
+        rail.appendChild(b);
+    });
+
+    // ---- Scroll reveal ----
+    var revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        revealObserver.observe(el);
+    });
+
+    // ---- Active nav link + rail dot highlighting ----
+    var sections = document.querySelectorAll('section[id], header[id]');
+    var navAnchors = document.querySelectorAll('.nav-links a');
+    var railDots = rail.querySelectorAll('.rail-dot');
+
+    var navObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var id = entry.target.getAttribute('id');
+                navAnchors.forEach(function(a) {
+                    a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+                });
+                railDots.forEach(function(d) {
+                    d.classList.toggle('active', d.getAttribute('data-target') === id);
+                });
+            }
+        });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+
+    sections.forEach(function(sec) { navObserver.observe(sec); });
+
+    // ---- TAPC trace diagram animation ----
+    var traceDemo = document.getElementById('trace-demo');
+    if (traceDemo) {
+        var tdObserver = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting) {
+                traceDemo.classList.add('in-view');
+                tdObserver.disconnect();
+            }
+        }, { threshold: 0.4 });
+        tdObserver.observe(traceDemo);
+    }
+
+    // ---- Filmstrip frame counter ----
+    var filmstrip = document.getElementById('filmstrip');
+    if (filmstrip) {
+        filmstrip.addEventListener('scroll', function() {
+            var first = filmstrip.querySelector('img');
+            var step = first ? first.getBoundingClientRect().width + 10 : 1;
+            var idx = Math.min(3, Math.max(1, Math.round(filmstrip.scrollLeft / step) + 1));
+            document.getElementById('film-idx').textContent = String(idx).padStart(2, '0');
+        }, { passive: true });
+    }
+    </script>
+
+</body>
+</html>
